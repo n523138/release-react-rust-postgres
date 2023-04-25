@@ -2,7 +2,8 @@ FROM solanalabs/rust-nightly:2023-01-22 AS base
 
 RUN apt-get update \
   && apt-get install -y libpq-dev \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && rustup update stable
 
 ENV USER=root
 ENV ROCKET_ADDRESS=0.0.0.0
